@@ -1,0 +1,35 @@
+﻿@model Ayakkabim.com.Models.Product
+
+@{
+}
+
+<div>Satın Alım İşlemleri <h2>@Model.Price</h2>   </div>
+<div>
+
+    <form>
+
+        <div class="form-group">
+            <label >Address giriniz</label><br />
+            <input  />
+           
+        </div>
+        <div class="form-group">
+            <label>Email giriniz</label><br />
+                <input />
+              
+            </div>
+             <div class="form-group">
+            <label>Kredi kartı Numarasını giriniz</label><br />
+                <input />
+              
+            </div>
+
+        
+    </form>
+
+
+</div>
+<div>
+    <a asp-action="Selling" asp-route-id="@Model.id " >Alışverisi tamamla</a>
+    <a asp-action="Index" asp-controller="Home">Listeye geri Dön</a>
+</div>

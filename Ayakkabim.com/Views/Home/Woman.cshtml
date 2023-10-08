@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Ayakkabim.com.Models.Product>
+@{
+    ViewData["Title"] = "Kadın";
+}
+<h1>@ViewData["Title"]</h1>
+
+<br />
+<div>
+    <table class="slideshow-container">
+        <thead>
+            <tr>
+                @foreach (var item in Model.Take(3))
+                {
+
+
+                    <td> <img src="@FileLocation.RetriveFileFromFolder@item.Image" class="img-thumbnail" height="290" width="400" asp-append-version="true" /></td>
+
+
+
+                }</tr>
+            <tr>
+                    @foreach (var item in Model.Take(3))
+                    {
+
+                    <td>
+                        <a asp-action="ProductBuy" asp-controller="Products" asp-route-id="@item.id">Detaylar</a> |
+                     @item.Brand<br>
+                     @item.name<br>
+                     fiyat : @item.Price
+                    </td>
+
+                    }</tr>
+        </thead>
+        <tbody>
+
+        
+
+            <tr>
+                @foreach (var item in Model.Skip(3).Take(6))
+                {
+                    <td> <img src="@FileLocation.RetriveFileFromFolder@item.Image" class="img-thumbnail" height="290" width="400" asp-append-version="true" /></td>
+
+                }
+
+            </tr>
+            <tr>
+                @foreach (var item in Model.Skip(3).Take(6))
+                {
+
+                   <td>
+                        <a asp-action="ProductBuy" asp-controller="Products" asp-route-id="@item.id">Detaylar</a> |
+                   @item.Brand<br>
+                   @item.name<br>
+                   fiyat : @item.Price
+                    </td>
+
+                }
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>

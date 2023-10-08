@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ayakkabim.com</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ayakkabim.com.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+              
+               
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                   
+                    <ul class="navbar-nav flex-grow-1" >
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Man">Erkek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Woman">Kadın</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Child">Çocuk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Brand">Markalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Üye girişi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <br />
+   <footer class="footer">
+       <div class="divcenter">
+       <div class="divIletisim">
+            <h3>Kurumsal</h3>
+            <br />
+          Hakkımızda
+           <br />
+            Gizlilik ve Çerez Politikası
+            <br />
+           Kişisel Verilerin Korunması
+        </div>
+        <div class="divIletisim">
+            <h3>Yardım</h3>
+            <br />
+            Sıkca sorulan Sorular
+            <br />
+            Güvenlik ve Gizlilik Politikası
+            <br />
+            Tıkla Gel Al
+        </div>
+         <div class="divIletisim">
+            <h3>Üyelik</h3>
+            <br />
+                <a  asp-area="" asp-controller="Account" asp-action="Login">Üye girişi</a>
+            <br />
+                <a  asp-area="" asp-controller="Users" asp-action="Create">Üye ol</a>
+            <br />
+            Sipariş Takibi
+        </div>
+         <div class="divIletisim">
+            <h3>İletişim </h3>
+            <br />
+           Adres:
+            <br />
+            Müşteri Hizmetleri:
+            <br />
+            İletişim Formu
+        </div>
+       </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

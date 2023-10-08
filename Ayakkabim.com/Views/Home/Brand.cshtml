@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "Markalar";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="cont">
+    @foreach (var Brand in Model)
+    {
+
+        <a class="Brandd" asp-action="BrandSearch" asp-route-Brandname="@Brand">@Brand</a>
+    }
+
+
+</div>
